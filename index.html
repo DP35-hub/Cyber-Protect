@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Protect</title>
+    <link rel="icon" type="image/png" href="images/logofdiv.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="logo">CyberProtect</div>
+
+        <div class="div">
+          
+        </div>
+
+        <a href="#" class="signup-button" id="signup-btn">Sign Up</a>
+        <a href="#" class="signup-button" id="logout-btn">Log out</a>
+
+      </div>
+
+      <div class="fdiv">
+        <div class="fdiv_background">
+          <img
+            src="images/fdiv_background.png"
+            alt="Background"
+            class="fdiv-img"
+          />
+          <img src="images/logofdiv.png" alt="Logo" class="fdiv-logo" />
+
+          <div class="fdiv-text">
+            <h1>SECURE DIGITAL WORLD</h1>
+            <p>one lesson at a time.</p>
+          </div>
+
+          <a href="#" class="Get-started">GET STARTED</a>
+        </div>
+      </div>
+
+      <div class="sdiv">
+        <div class="sdiv-content">
+          <h1>Play Your Way to Cyber Safety</h1>
+          <p>
+            With cyber threats on the rise, students need better ways to protect
+            themselves online.
+          </p>
+          <p>
+            Play as an intern tasked with improving cybersecurity education
+            through gamified learning.
+          </p>
+        </div>
+        <div class="sdiv-character">
+          <img src="images/character.gif" alt="Character" />
+        </div>
+
+        <!-- Modal -->
+        <div class="cp-modal" id="signupModal">
+          <div class="cp-modal-content">
+            <span class="cp-close" id="closeModal">&times;</span>
+            <h2>Create an Account</h2>
+
+            <div class="social-signup">
+              <button class="social-btn google" id="signup-google-btn">
+                <img src="images/google.png" alt="Google" /><span
+                  >Continue with Google</span
+                >
+              </button>
+            </div>
+
+            <div class="divider"><span>or</span></div>
+
+            <form class="signup-form" method="post" id="signup-form">
+              <input
+                type="text"
+                placeholder="Username"
+                id="username"
+                name="username"
+                required
+              />
+              <input type="email" placeholder="Email" id="email" name="email" required />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                required
+              />
+              <button type="submit" class="submit-btn" id="submit-btn-signup">Sign Up</button>
+            </form>
+            <p class="login-link" id="login-link">
+              Already have an account?<a href="#">Login</a>
+            </p>
+          </div>
+        </div>
+
+
+        <!-- LOGIN MODAL -->
+        <div class="cp-modal" id="loginModal">
+          <div class="cp-modal-content">
+            <span class="cp-close" id="closeModalLogin">&times;</span>
+            <h2>Login</h2>
+
+            <div class="social-signup">
+              <button class="social-btn google" id="login-google-btn">
+                <img src="images/google.png" alt="Google" /><span
+                  >Continue with Google</span
+                >
+              </button>
+            </div>
+
+            <div class="divider"><span>or</span></div>
+
+            <form class="signup-form" method="post" id="login-form">
+              <input type="email" placeholder="Email" id="loginEmailInput" name="loginEmailInput" required />
+              <input
+                type="password"
+                placeholder="Password"
+                id="loginPasswordInput"
+                name="loginPasswordInput"
+                required
+              />
+              <button type="submit" class="submit-btn" id="submit-btn-login">Login</button>
+            </form>
+            <p class="login-link">
+              You don't have an account?<a href="#" id="register-btn">Register</a>
+            </p>
+          </div>
+        </div>
+        <!-- END OF LOGIN MODAL -->
+
+
+      </div>
+
+      <div class="tdiv">
+        <div class="tdiv container py-5">
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card custom-card h-100">
+                <img src="images/card1.png" class="card-img-top" alt="Card 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Interactive Gameplay</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card custom-card h-100">
+                <img src="images/shrek.gif" class="card-img-top" alt="Card 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Card Two</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card custom-card h-100">
+                <img
+                  src="images/shrek-smirk.gif"
+                  class="card-img-top"
+                  alt="Card 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card Three</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card custom-card h-100">
+                <img
+                  src="images/turtle.gif"
+                  class="card-img-top"
+                  alt="Card 4"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card Four</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./script/firebase.js"></script>
+    <script type="module" src="./script/account.js"></script>
+    <script type="module" src="./script/registration.js"></script>
+    <script type="module" src="./script/login.js"></script>
+  </body>
+</html>

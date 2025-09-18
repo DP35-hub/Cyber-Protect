@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/homepage.css" />
+    <title>Welcome Home</title>
+  </head>
+  <body>
+    <main class="homepage" id="homepage">
+      <h1>Welcome Users</h1>
+
+      <button id="logout-btn">Logout</button>
+    </main>
+
+    <script type="module" src="../script/firebase.js"></script>
+    <script type="module" src="../script/middleware.js"></script>
+
+    <script type="module">
+      import { auth, db } from "../script/firebase.js";
+      import {
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+      import {
+        doc,
+        collection,
+        getDoc,
+        query,
+        where,
+      } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+      const logOutBtn = document.getElementById("logout-btn");
+
+      logOutBtn.addEventListener("click", function () {
+        if (confirm("Are you sure you want to logout?"))
+          signOut(auth)
+            .then((res) => {
+              console.log("logout..");
+
+              window.location.href = "../index.html";
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+      });
+
+      /* CHECK USER ROLE */
+      onAuthStateChanged(auth, (user) => {
+        const getAdminInfo = async () => {
+          const docRef = doc(db, "users", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.data().role === "ADMIN") {
+            console.log("logged as admin..");
+            window.location.assign("./admin-homepage.html");
+          }
+        };
+
+        getAdminInfo();
+      });
+    </script>
+  </body>
+</html>
